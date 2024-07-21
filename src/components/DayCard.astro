@@ -30,8 +30,10 @@ const animeListItems = animeList.map((anime) => {
     {
       animeListItems.map((anime) => (
         <div class="flex items-center gap-0 odd:bg-white even:bg-slate-50 p-2">
-          <span class="grow text-2xl text-pretty">{anime.title}</span>
-          <a href={anime.torrentLink} class="">
+          <span class="grow text-2xl text-pretty  text-blue-600 hover:text-blue-800 transition-all duration-200 ease-in-out transform hover:scale-105 hover:underline hover:px-2">
+            {anime.title}
+          </span>
+          <a href={anime.torrentLink} target="_blank">
             <svg
               xmlns="http://www.w3.org/2000/svg"
               viewBox="0 0 24 24"
