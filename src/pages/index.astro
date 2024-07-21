@@ -1,0 +1,59 @@
+---
+import Layout from "../layouts/Layout.astro";
+import DayCard from "../components/DayCard.astro";
+import animePerDay from "../content/anime-per-day.json";
+import { AnimeSchedule } from "../env";
+
+const animeSchedule: AnimeSchedule = animePerDay;
+---
+
+<Layout title="Anime Per Day">
+  <h1 class="text-3xl font-semibold text-center mt-4 mb-2">Anime Per Day</h1>
+  <main class="sm:container mx-auto flex flex-col gap-0 px-2">
+    {
+      Object.entries(animeSchedule).map(([dayName, animeList]) => (
+        <DayCard daySlug={dayName} animeList={animeList} />
+      ))
+    }
+  </main>
+</Layout>
+
+<script>
+  const daysItems = document.querySelectorAll("details");
+
+  // Order the days of the week starting from today.
+  const daySlugs = Array.from(daysItems).map((day) =>
+    day.getAttribute("data-day")
+  );
+  const today = new Date()
+    .toLocaleString("en-US", { weekday: "long" })
+    .toLowerCase();
+  const todayIndex = daySlugs.indexOf(today);
+
+  daysItems.forEach((day, index) => {
+    day.style.order = ((index - todayIndex + 7) % 7).toString();
+  });
+
+  // Add special styles to the current day to summary element.
+  const todaySummary = daysItems[todayIndex].querySelector(`summary`);
+  todaySummary.classList.add(
+    "bg-blue-100",
+    "text-blue-800",
+    "hover:bg-blue-200"
+  );
+  const todaySummaryContainer =
+    daysItems[todayIndex].querySelector(`:scope > div`);
+  todaySummaryContainer.classList.add("bg-blue-50");
+</script>
+
+<style is:global>
+  @import url("https://fonts.googleapis.com/css2?family=Zain:wght@400;700&display=swap");
+
+  body {
+    font-family: "Zain", sans-serif;
+  }
+
+  .is-today {
+    background-color: #d31010;
+  }
+</style>
