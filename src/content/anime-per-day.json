@@ -14,26 +14,31 @@
             "title": "Oshi no Ko"
         },
         {
-            "title": "Alya Sometimes Hides Her Feelings in Russian"
+            "title": "Alya Sometimes Hides Her Feelings in Russian",
+            "query": "Tokidoki Bosotto Russia-go"
         },
         {
             "title": "The Strongest Magician in the Demon Lord's Army was a Human"
         },
         {
-            "title": "Our Last Crusade or the Rise of a New World Season 2"
+            "title": "Our Last Crusade or the Rise of a New World Season 2",
+            "query": "Kimi to Boku no Saigo no Senjou"
         }
     ],
     "thursday": [
         {
-            "title": "The Café Terrace and Its Goddesses Season 2"
+            "title": "The Café Terrace and Its Goddesses Season 2",
+            "query": "Megami no Cafe"
         }
     ],
     "friday": [
         {
-            "title": "That Time I Got Reincarnated as a Slime Season 3"
+            "title": "That Time I Got Reincarnated as a Slime Season 3",
+            "query": "Tensei shitara Slime"
         },
         {
-            "title": "2.5 Dimensional Seduction"
+            "title": "2.5 Dimensional Seduction",
+            "query": "2.5-jigen no Ririsa"
         },
         {
             "title": "NieR:Automata Ver1.1a Part 2"
@@ -44,7 +49,12 @@
             "title": "Boku no Hero Academia 7"
         },
         {
-            "title": "Too Many Losing Heroines!"
+            "title": "Too Many Losing Heroines!",
+            "query": "Make Heroine ga Oosugiru"
+        },
+        {
+            "title": "The Elusive Samurai",
+            "query": "Nige Jouzu no Wakagimi"
         }
     ],
     "sunday": [
@@ -52,10 +62,12 @@
             "title": "Tower of God 2"
         },
         {
-            "title": "My Deer Friend Nokotan"
+            "title": "My Deer Friend Nokotan",
+            "query": "Shikanoko Nokonoko"
         },
         {
-            "title": "Wistoria: Wand and Sword"
+            "title": "Wistoria: Wand and Sword",
+            "query": "Tsue to Tsurugi no Wistoria"
         }
     ]
 }

@@ -1,7 +1,7 @@
 ---
 interface Props {
   daySlug: string;
-  animeList: { title: string }[];
+  animeList: { title: string; query?: string }[];
 }
 
 const { daySlug, animeList } = Astro.props;
@@ -11,7 +11,7 @@ const torrentQueryBase = "https://nyaa.si/?f=0&c=1_2&q=";
 const animeListItems = animeList.map((anime) => {
   return {
     ...anime,
-    torrentLink: `${torrentQueryBase}${encodeURIComponent(anime.title)}`,
+    torrentLink: `${torrentQueryBase}${encodeURIComponent(anime?.query ?? anime.title)}`,
   };
 });
 ---
@@ -30,7 +30,7 @@ const animeListItems = animeList.map((anime) => {
     {
       animeListItems.map((anime) => (
         <div class="flex items-center gap-0 even:bg-slate-50 last:rounded-b-lg p-2">
-          <span class="grow text-2xl text-pretty  text-blue-600 hover:text-blue-800 transition-all duration-200 ease-in-out transform hover:scale-105 hover:underline hover:px-2">
+          <span class="grow text-2xl text-pretty  text-blue-600 hover:text-blue-800 transition-all duration-200 ease-in-out transform hover:underline hover:px-2">
             {anime.title}
           </span>
           <a href={anime.torrentLink} target="_blank">
