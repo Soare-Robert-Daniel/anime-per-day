@@ -1,10 +1,6 @@
 {
-    "monday": [
-       
-    ],
-    "tuesday": [
-      
-    ],
+    "monday": [],
+    "tuesday": [],
     "wednesday": [
         {
             "title": "Re:Zero kara Hajimeru Isekai Seikatsu 3rd Season",
@@ -25,12 +21,7 @@
             "title": "Trillion Game"
         }
     ],
-    "friday": [
-        {
-            "title": "That Time I Got Reincarnated as a Slime Season 3",
-            "query": "Tensei shitara Slime"
-        }
-    ],
+    "friday": [],
     "saturday": [
         {
             "title": "Boku no Hero Academia 7"
