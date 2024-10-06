@@ -21,31 +21,15 @@ const animeSchedule: AnimeSchedule = animePerDay;
 </Layout>
 
 <script>
-  const daysItems = document.querySelectorAll("details");
-
-  // Order the days of the week starting from today.
-  const daySlugs = Array.from(daysItems).map((day) =>
-    day.getAttribute("data-day")
-  );
+  // Highlights the current day of the week.
   const today = new Date()
     .toLocaleString("en-US", { weekday: "long" })
     .toLowerCase();
-  const todayIndex = daySlugs.indexOf(today);
-
-  daysItems.forEach((day, index) => {
-    day.style.order = ((index - todayIndex + 7) % 7).toString();
+  document.querySelectorAll("[data-day]").forEach((day) => {
+    day
+      .querySelector("h6")
+      ?.classList.toggle("bg-red-800", day.getAttribute("data-day") === today);
   });
-
-  // Add special styles to the current day to summary element.
-  const todaySummary = daysItems[todayIndex].querySelector(`summary`);
-  todaySummary.classList.add(
-    "bg-blue-100",
-    "text-blue-800",
-    "hover:bg-blue-200"
-  );
-  const todaySummaryContainer =
-    daysItems[todayIndex].querySelector(`:scope > div`);
-  todaySummaryContainer.classList.add("bg-blue-50");
 </script>
 
 <style is:global>
