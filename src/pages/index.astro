@@ -8,8 +8,8 @@ const animeSchedule: AnimeSchedule = animePerDay;
 ---
 
 <Layout title="Anime Per Day">
-  <h1 class="text-3xl font-semibold text-center mt-4 mb-2">Anime Per Day</h1>
-  <main class="sm:container mx-auto flex flex-col gap-0 px-2">
+  <h1 class="text-2xl font-mono text-center mt-4 mb-2">Anime Per Day</h1>
+  <main class="mx-auto flex flex-col gap-0 px-2 max-w-lg">
     {
       Object.entries(animeSchedule)
         .filter(([_, animeList]) => animeList.length > 0)
