@@ -11,9 +11,11 @@ const animeSchedule: AnimeSchedule = animePerDay;
   <h1 class="text-3xl font-semibold text-center mt-4 mb-2">Anime Per Day</h1>
   <main class="sm:container mx-auto flex flex-col gap-0 px-2">
     {
-      Object.entries(animeSchedule).map(([dayName, animeList]) => (
-        <DayCard daySlug={dayName} animeList={animeList} />
-      ))
+      Object.entries(animeSchedule)
+        .filter(([_, animeList]) => animeList.length > 0)
+        .map(([dayName, animeList]) => (
+          <DayCard daySlug={dayName} animeList={animeList} />
+        ))
     }
   </main>
 </Layout>
